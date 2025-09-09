@@ -1,6 +1,6 @@
 import "dotenv/config";
 import app from "./app.js";
-import { connectDB } from "./config/db.js";
+import { connectToDatabase } from "./config/db.js";
 
 const PORT = process.env.PORT || 4000;
 const URI  = process.env.MONGODB_URI;
@@ -8,7 +8,7 @@ const URI  = process.env.MONGODB_URI;
 async function main() {
   try {
     if (!URI) throw new Error("MONGODB_URI manquant dans .env");
-    await connectDB(URI);
+    await connectToDatabase(URI);
     app.listen(PORT, () => {
       console.log(`🚀 Server prêt sur http://localhost:${PORT}`);
     });
