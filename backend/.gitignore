@@ -7,7 +7,6 @@
 /.idea
 # testing
 /coverage
-/backend/node_modules
 
 # production
 /build
